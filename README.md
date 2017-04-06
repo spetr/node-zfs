@@ -28,13 +28,13 @@ $ npm install --save zfs
 var zfs-filesystem = require('zfs');
 ```
 
-##Now you can address the zfs library as follows:
+## Now you can address the zfs library as follows:
 
 ### To use the zfs command implementation:
 ```
 zfs-filesystem.zfs.
 ```
-###To use the zpool implementation:
+### To use the zpool implementation:
 
 ```
 zfs-filesystem.zpool.
@@ -42,7 +42,7 @@ zfs-filesystem.zpool.
 
 ## Implemented commands for the ZFS tool
 
-###ZFS list
+### ZFS list
 
 The list command lists a specific zfs dataset or all datasets. All possible options can be found inside the lib/zfs.js file.
 
@@ -52,7 +52,7 @@ zfs-filesystem.zfs.list(function (err, list) {
 });
 ```
 
-###ZFS get
+### ZFS get
 
 Get the parameters of a specific dataset or all datasets. All possible options can be found inside the lib/zfs.js file.
 
@@ -67,7 +67,7 @@ zfs-filesystem.zfs.get(opts, function (err, options) {
 });
 ```
 
-###ZFS set
+### ZFS set
 
 Set a specific option for a given dataset. All possible options can be found inside the lib/zfs.js file.
 
@@ -83,7 +83,7 @@ zfs-filesystem.zfs.set(opts, function (err, output) {
 });
 ```
 
-###ZFS Destroy
+### ZFS Destroy
 
 Remove a dataset from the ZFS filesystem
 
@@ -97,7 +97,7 @@ zfs-filesystem.zfs.destroy(opts, function (err, output) {
 });
 ```
 
-###ZFS Create
+### ZFS Create
 
 Create a new dataset inside the ZFS filesystem. All possible options can be found inside the lib/zfs.js file.
 
@@ -111,7 +111,7 @@ zfs-filesystem.zfs.create(opts, function (err, output) {
 });
 ```
 
-###ZFS Snapshot
+### ZFS Snapshot
 
 Creates a snapshot with the given name. All possible options can be found inside the lib/zfs.js file.
 
@@ -126,7 +126,22 @@ zfs-filesystem.zfs.snapshot(opts, function (err, output) {
 });
 ```
 
-###ZFS Clone
+### ZFS Rollback
+
+Rolls back to a snapshot with the given name. All possible options can be found inside the lib/zfs.js file.
+
+```js
+var opts = {
+    name: 'my-snapshot-name',
+    dataset: 'my-dataset-name'
+};
+
+zfs-filesystem.zfs.rollback(opts, function (err, output) {
+    console.log(output);
+});
+```
+
+### ZFS Clone
 
 Creates a clone of the given snapshot. All possible options can be found inside the lib/zfs.js file.
 
